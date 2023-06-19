@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PasienController;
+use App\Http\Controllers\RiwayatController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,9 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-// view data pasien
 Route::get('/pasiens', [PasienController::class, 'viewAll']);
 Route::get('/pasiens/{parameter}', [PasienController::class, 'detail']);
+Route::post('/pasiens', [PasienController::class, 'store']);
+Route::put('/pasiens/{parameter}', [PasienController::class, 'update']);
+Route::delete('/pasiens/{parameter}', [PasienController::class, 'destroy']);
+Route::get('/riwayats', [RiwayatController::class, 'index']);
