@@ -17,4 +17,13 @@ class PasienController extends Controller
             'data' => PasienResource::collection($pasiens),
         ]);
     }
+
+    public function detail(String $parameter) {
+        $pasien = Pasien::firstWhere('nik', $parameter);
+
+        return response()->json([
+            'status' => 'success',
+            'data' => new PasienResource($pasien)
+        ]);
+    }
 }

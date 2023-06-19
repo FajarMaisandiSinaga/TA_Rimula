@@ -24,7 +24,12 @@ class PasienResource extends JsonResource
             'pasien_jenis_kelamin' => $this->jenis_kelamin,
             'pasien_agama' => $this->agama,
             'pasien_alamat' => $this->alamat,
-            'pasien_telepon' => $this->telepon
+            'pasien_telepon' => $this->telepon,
+            'pasien_riwayat' => $this->whenLoaded('riwayat', function() {
+                return collect($this->riwayat)->each(function ($riwayat) {
+                    return $riwayat;
+                });
+            }),
         ];
     }
 }
