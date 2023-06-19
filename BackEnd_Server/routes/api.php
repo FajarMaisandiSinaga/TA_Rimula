@@ -20,4 +20,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // view data pasien
-Route::get('/view', [PasienController::class, 'viewAll']);
+Route::get('/pasiens', [PasienController::class, 'viewAll']);
+Route::get('/pasiens/{parameter}', [PasienController::class, 'detail']);
