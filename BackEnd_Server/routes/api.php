@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
+// view data pasien
 Route::get('/pasiens', [PasienController::class, 'viewAll']);
 Route::get('/pasiens/{parameter}', [PasienController::class, 'detail']);
 Route::post('/pasiens', [PasienController::class, 'store']);

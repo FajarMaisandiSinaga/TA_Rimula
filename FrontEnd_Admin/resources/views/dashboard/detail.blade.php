@@ -7,6 +7,12 @@
     <!-- DataTales Example -->
     <div class="card shadow">
         <div class="card-body">
+
+            <a href="{{ url('pasiens/print/' . $pasien->pasien_nik) }}" class="btn btn-secondary btn-block mb-3">
+                Print Rekam Medis
+            </a>
+
+
             <div class="row">
 
                 <div class="col-md-6">
