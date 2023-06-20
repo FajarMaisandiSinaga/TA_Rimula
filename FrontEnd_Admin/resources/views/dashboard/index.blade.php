@@ -7,6 +7,9 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">
+            <a href="{{ url('pasiens/tambah') }}" class="btn btn-primary btn-block mb-3">
+                Tambah Pasien
+            </a>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
@@ -29,7 +32,11 @@
                                 <td><a href="{{ url('pasiens/' . $pasien->pasien_nik) }}">{{ $pasien->pasien_nik }}</a></td>
                                 <td>{{ $pasien->pasien_umur }}</td>
                                 <td>{{ $pasien->pasien_jenis_kelamin }}</td>
-                                <td>$320,800</td>
+                                <td>
+                                    <a href="{{ url('pasiens/' . $pasien->pasien_nik) }}" class="btn btn-info btn-sm">Detail</a>
+                                    <a href="{{ url('pasiens/edit/' . $pasien->pasien_nik) }}" class="btn btn-warning btn-sm">Edit</a>
+                                    <a href="{{ url('pasiens/' . $pasien->pasien_nik) }}" class="btn btn-danger btn-sm">Hapus</a>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

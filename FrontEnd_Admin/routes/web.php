@@ -15,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [DashboardController::class, 'index']);
+Route::get('pasiens/tambah', [DashboardController::class, 'create']);
+Route::post('pasiens/tambah', [DashboardController::class, 'store']);
 Route::get('/pasiens/{parameter}', [DashboardController::class, 'show']);
